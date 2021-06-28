@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+
+  curl-runner:
+    image: ${REG}curl-runner:${BUILD_TAG}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment: 
+      REQUESTS_JSON: ${REQUESTS_JSON}
+      LOOP: "5"
+      SELECTION: "random"

@@ -1,0 +1,14 @@
+[
+    {
+        "method": "GET",
+        "url": "https://google.com"
+    },
+    {
+        "method": "GET",
+        "url": "https://www.microsoft.com"
+    },
+    {
+        "method": "GET",
+        "url": "https://amazon.com"
+    }
+]
