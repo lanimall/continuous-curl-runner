@@ -7,8 +7,8 @@ RUN apk add --update \
     && rm -rf /var/cache/apk/*
 
 ENV REQUESTS_JSON="[]"
-ENV LOOP="5"
-ENV SELECTION="random"
+ENV REQUESTS_INTERVAL="5"
+ENV REQUESTS_SELECTION="random"
 
 COPY scripts/entrypoint.sh /entrypoint.sh
 COPY scripts/curl_requests.sh /curl_requests.sh

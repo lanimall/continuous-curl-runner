@@ -9,20 +9,22 @@ _jq() {
 
 CURL_OPTIONS="--write-out '%{http_code}' --silent --show-error --output /dev/null"
 
-if [ "$SELECTION" == "random" ]; then
+if [ "$REQUESTS_SELECTION" == "random" ]; then
     index=`echo "$RANDOM % $requests_length + 1" | bc`
     pick=`echo $requests_encoded | cut -d" " -f $index`
     method=$(_jq $pick '.method')
     url=$(_jq $pick '.url')
     echo "Executing: curl $CURL_OPTIONS -X ${method} \"${url}\""
     curl $CURL_OPTIONS -X ${method} "${url}"
-else
+elif [ "$REQUESTS_SELECTION" == "all" ]; then
     for row in $requests_encoded; do
         method=$(_jq $row '.method')
         url=$(_jq $row '.url')
         echo "Executing: curl $CURL_OPTIONS -X ${method} \"${url}\""
         curl $CURL_OPTIONS -X ${method} "${url}"
     done
+else
+    echo "Unsupported request selection [$REQUESTS_SELECTION]"
 fi
 
 echo ""

@@ -22,8 +22,8 @@ if [ "$requests_length" == "0" ]; then
 fi
 echo "REQUESTS_JSON array contains $requests_length elements! Ready to curl!"
 
-if [ "x$LOOP" != "x" ]; then
-   watch -n $LOOP /bin/sh curl_requests.sh
+if [ "x$REQUESTS_INTERVAL" != "x" ]; then
+   watch -n $REQUESTS_INTERVAL /bin/sh curl_requests.sh
 else
    /bin/sh curl_requests.sh
 fi
