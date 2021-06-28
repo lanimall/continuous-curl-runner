@@ -2,6 +2,8 @@
 
 A simple runner to execute curl requests from a list of possible requests
 
+Find image on [dockerhub](https://hub.docker.com/repository/docker/lanimall/continuous-curl-runner)
+
 # Usage
 
 Provide the following ENV vars:
