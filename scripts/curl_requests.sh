@@ -1,7 +1,7 @@
 #!/bin/sh
 
 requests_length=$(echo $REQUESTS_JSON | jq -r '. | length')
-requests_encoded=$(echo $REQUESTS_JSON | envsubst | jq -r '.[] | @base64')
+requests_encoded=$(echo $REQUESTS_JSON | sed -r 's/env/$/gI' | envsubst | jq -r '.[] | @base64')
 CURL_OPTIONS="--write-out '%{http_code}' --silent --show-error --output /dev/null"
 
 _jq() {

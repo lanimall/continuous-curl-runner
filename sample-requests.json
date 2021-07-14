@@ -3,8 +3,8 @@
         "method": "GET",
         "url": "https://google.com",
         "basic_auth": {
-            "username": "test1",
-            "password" : "${password1}"
+            "username": "env{test_user}",
+            "password" : "env{test_password1}"
         },
         "headers": {
             "Content-Type": "application/json",
@@ -16,8 +16,8 @@
         "method": "GET",
         "url": "https://www.microsoft.com",
         "basic_auth": {
-            "username": "test2",
-            "password" : "${password2}"
+            "username": "${test_user}",
+            "password" : "${test_password2}"
         }
     },
     {
@@ -28,8 +28,8 @@
         "method": "GET",
         "url": "https://amazon.com",
         "basic_auth": {
-            "username": "test3",
-            "password" : "${password3}"
+            "username": "${test_user}",
+            "password" : "${test_password3}"
         },
         "headers": {
             "Content-Type": "application/json",

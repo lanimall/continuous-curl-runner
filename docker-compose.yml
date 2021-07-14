@@ -12,7 +12,8 @@ services:
       REQUESTS_INTERVAL: "5"
       REQUESTS_SELECTION: "random"
       #REQUESTS_SELECTION: "all"
-      password1: "passwd1"
-      password2: "passwd2"
-      password3: "passwd3"
+      test_user: "some_user"
+      test_password1: "passwd1"
+      test_password2: "passwd2"
+      test_password3: "passwd3"
 
