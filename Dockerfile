@@ -4,6 +4,7 @@ RUN apk add --update \
     tini \
     curl \
     jq \
+    gettext \
     && rm -rf /var/cache/apk/*
 
 ENV REQUESTS_JSON="[]"

@@ -11,3 +11,8 @@ services:
       REQUESTS_JSON: ${REQUESTS_JSON}
       REQUESTS_INTERVAL: "5"
       REQUESTS_SELECTION: "random"
+      #REQUESTS_SELECTION: "all"
+      password1: "passwd1"
+      password2: "passwd2"
+      password3: "passwd3"
+
